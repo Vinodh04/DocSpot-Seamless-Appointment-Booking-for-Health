@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DocSpot - Book a Doctor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>DocSpot</h1>
+    <p> Booking Appointment for Health</p>
+  </header>
+
+  <section class="container">
+    <!-- User Registration -->
+    <div class="card">
+      <h2>Register</h2>
+      <input type="name" id="name" placeholder="Name">
+      <input type="Phone Number" id="Phone Number" placeholder="Phone Number">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="registerUser()">Sign Up</button>
+    </div>
+
+    <!-- Doctor Browsing -->
+    <div class="card">
+      <h2>Available Doctors</h2>
+      <select id="specialtyFilter" onchange="filterDoctors()">
+        <option value="">All Specialties</option>
+        <option value="Cardiologist">Cardiologist</option>
+        <option value="Dermatologist">Dermatologist</option>
+        <option value="General">General Physician</option>
+      </select>
+
+      <div id="doctorList" class="doctor-list"></div>
+    </div>
+  </section>
+
+  <!-- Appointment Booking Modal -->
+  <div id="bookingModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Book Appointment</h2>
+      <label>Date: <input type="date" id="appointmentDate"></label>
+      <label>Upload Report: <input type="file" id="fileUpload"></label>
+      <button onclick="submitAppointment()">Submit</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Confirmation -->
+  <div id="confirmation" class="confirmation hidden">
+    Appointment successfully booked!
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
